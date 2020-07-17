@@ -1,0 +1,58 @@
+
+<div class="row justify-content-center" >    
+ 
+
+  <div class="col-12 col-md-6 col-lg-8 container-form">
+      <form  #form="ngForm" role="form"  (ngSubmit)="save()">         
+          <h3>Alta alumno</h3>
+          <div>          
+      
+              <div class="form-group row">
+                  <div class="col">
+                      <label class="form-control-label" for="field_nombre">Nombre</label>
+                      <input type="text" class="form-control" required value="alumno.nombre" [(ngModel)]="alumno.nombre" name="nombre" id="field_nombre"/>
+                   </div>
+                   <div class="col">
+                      <label class="form-control-label" for="field_apellido">Apellido</label>
+                      <input type="text" class="form-control" [(ngModel)]="alumno.apellido" name="apellido" id="field_apellido"/>
+                   </div>
+              </div>                
+              <div class="form-group row">
+                  <div class="col">
+                      <label class="form-control-label" for="field_dni">Dni</label>
+                      <input type="number" class="form-control" [(ngModel)]="alumno.dni" name="dni" id="field_dni"/>
+                   </div>
+                   <div class="col">
+                      <label class="form-control-label" for="field_matricula">Matricula</label>
+                      <input type="number" class="form-control" name="matricula" [(ngModel)]="alumno.matricula" id="field_matricula"/>
+                          
+                  </div>
+              </div>
+             
+              <div class="form-group row">
+                  <div class="col">
+                      <label class="form-control-label" for="field_fecha">Fecha de nacimiento</label>
+                      <input type="date" class="form-control"  required [(ngModel)]="alumno.fecha" name="fecha" id="field_fecha"/>
+                   </div>
+                   
+              </div>
+              <div class="form-group row" *ngIf="alumnoGuardado == true">
+                <div class="col">
+                  <p>Alumno guardado con exito</p>
+                </div>
+              </div>
+                   
+              
+             
+              <div class="form-group container-buttons">
+                 
+                  <button type="submit" id="save-entity" [disabled]="!form.form.valid"
+                      class="btn btn-primary">
+                      <span>Guardar Alumno</span>
+                  </button>
+                 
+              </div>      
+           </div>
+      </form>
+  </div>
+</div>
